@@ -23,6 +23,7 @@ function main() {
     // Get the rendering context for 2DCG <- (2)
     var ctx = canvas.getContext('2d');
     // Draw a blue rectangle <- (3)
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
     ctx.fillStyle = 'rgba(0, 0, 0, 1.0)'; // Set a blue color
     ctx.fillRect(0, 0, canvas.width, canvas.height); // Fill a rectangle with the color
 } 
@@ -56,8 +57,10 @@ function handleDrawEvent() {
     // Get the rendering context for 2DCG <- (2)
     var ctx = canvas.getContext('2d');
     // Draw a blue rectangle <- (3)
-    ctx.fillStyle = 'rgba(0, 0, 0, 1.0)'; // Set a black color
-    ctx.fillRect(0, 0, canvas.width, canvas.height); // Fill canvas w/ black
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+    ctx.fillStyle = 'rgba(0, 0, 0, 1.0)'; // Set fill to black
+    ctx.fillRect(0, 0, canvas.width, canvas.height); // Fill canvas with black
+
     
     const x1 = document.getElementById("x1Input").value;
     if (!x1) {
@@ -95,12 +98,11 @@ function handleDrawOperationEvent() {
     }
     
     // Get the rendering context for 2DCG <- (2)
-    var ctx = getWebGLContext(canvas);
-    // Set the color for clearing <canvas>
-    ctx.clearColor(0.0, 0.0, 0.0, 1.0);
-
-    // Clear <canvas>
-    ctx.clear(gl.COLOR_BUFFER_BIT);
+    var ctx = canvas.getContext('2d');
+    // Draw a blue rectangle <- (3)
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+    ctx.fillStyle = 'rgba(0, 0, 0, 1.0)'; // Set a blue color
+    ctx.fillRect(0, 0, canvas.width, canvas.height); // Fill a rectangle with the color
     
     const x1 = document.getElementById("x1Input").value;
     if (!x1) {
