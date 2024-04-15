@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Draw a vector</title>
+    </head>
+
+    <body onload="main()">
+        <script src="asg0.js"></script>
+        <script src="./lib/cuon-matrix-cse160.js"></script>
+        <script src="./lib/webgl-utils.js"></script>
+        <script src="./lib/webgl-debug.js"></script>
+        <script src="./lib/cuon-utils.js"></script>
+
+        <div class="canvasArea">
+            <canvas id="canvas" width="400" height="400">
+                Please use a browser that supports "canvas"
+            </canvas>
+        </div>
+        <div class="vector1Area">
+            <label for="x1Input">v1: X</label>
+            <input type="number" id="x1Input" name="x1Input" size="10" step="0.01" />
+            <label for="yInput">Y</label>
+            <input type="number" id="y1Input" name="y1Input" size="10" />
+            
+        </div>
+        <div class="vector2Area">
+            <label for="x2Input">v2: X</label>
+            <input type="number" id="x2Input" name="x2Input" size="10" step="0.01" />
+            <label for="y2Input">Y</label>
+            <input type="number" id="y2Input" name="y2Input" size="10" />
+        </div>
+        <div class="drawButtonArea">
+            <input type="button" id="drawButton" value="Draw" size="10" />
+            <br> <br>
+        </div>
+        <div class="operationArea">
+            <label for="operationSelect">Operations: </label>
+            <select name="operations" id="operationSelect">
+                <option value="Add">Add</option>
+                <option value="Subtract">Subtract</option>
+                <option value="Multiply">Multiply</option>
+                <option value="Divide">Divide</option>
+                <option value="Magnitude">Magnitude</option>
+                <option value="Normalize">Normalize</option>
+                <option value="Angle Between">Angle Between</option>
+                <option value="Area">Area</option>
+            </select> 
+            <label for="scalarInput">Scalar: </label>
+            <input type="number" id="scalarInput" name="scalarInput" size="10" step="0.01" />
+            <br>
+            <input type="button" id="opDrawButton" value="Draw" size="10" />
+        </div>
+    </body>
+</html> 
